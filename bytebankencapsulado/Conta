@@ -1,11 +1,26 @@
-package bytebankencapsulado;
 //Classe com atributos = características
 public class Conta {
 	private double saldo;
 	private int agencia;
 	private int numero;
 	private cliente titular;
+	//Conceito de variável global da classe e não do objeto
+	private static int total;
 
+	public Conta(int agencia, int numero) {
+		Conta.total++;
+		if(total > 1) {
+		System.out.println("Há "+ Conta.total + " contas abertas");
+		}else {
+			System.out.println("Há "+ total + " conta aberta");
+		}
+		//Inicializar, popular os atributos
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Agencia: " + this.agencia);
+		System.out.println("Conta: " + this.numero);
+	}
+	
 	// Nos métodos, dentro dos () inserimos argumentos
 	void deposita(double valor) {
 		// This = usado para atributos e não variáveis
@@ -35,11 +50,17 @@ public class Conta {
 		return this.saldo;
 	}
 	
+//COM CONSTRUTORES É DISPENSÁVEL O GET E SET
 	public int getNumero() {
 		return this.numero;
 	}
 	
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("Conta não pode ser negativo!");
+			System.out.println("Favor digitar uma valor válido");
+			return;
+		}
 		this.numero = numero;
 	}
 	
@@ -48,6 +69,21 @@ public class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Agência não pode ser negativo!");
+			System.out.println("Favor digitar uma valor válido");
+			return;
+		}
 		this.agencia = agencia;
+	}
+	
+	public void setTitular(cliente titular) {
+		this.titular = titular;
+	}
+	public cliente getTitular() {
+		return titular;
+	}
+	public static int getTotal() {
+		return Conta.total;
 	}
 }
