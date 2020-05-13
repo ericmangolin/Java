@@ -5,15 +5,16 @@ public class FuncionarioTeste {
 	private int tipo = 0; //0 - Funcionário comum; 1 - Gerente; etc
 	private int senha;
 	
+	
 	public double getBonificacao() {
 		if(this.tipo == 0) {
-			System.out.print("Funcionário Comum: ");
-			return this.salario * 0.1;
+			System.out.print("Funcion Comum: ");
+			return this.salario;
 		}else if(this.tipo == 1) {
-			System.out.print("Gerente: ");
+			System.out.print("Func. Gerente: ");
 			return this.salario;
 		}else {
-			System.out.print("Diretor: ");
+			System.out.print("Func. Diretor: ");
 			return this.salario + 1000.0;
 		}
 	}
