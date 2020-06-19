@@ -9,6 +9,8 @@ public class TesteFuncionario {
 		eric.setCpf("917.333.401-49");
 		eric.setSalario(30.000);
 		
+		
+		
 		System.out.println(eric.getNome());
 		System.out.println(eric.getCpf());
 		System.out.println(eric.getSalario());

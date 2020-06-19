@@ -2,6 +2,12 @@
 public class TesteGerente {
 
 	public static void main(String[] args) {
+		
+		//É possivel declarar os contratos que a var utiliza
+		//Pode-se usar todos os objetos que utilizam o mesmo contrato
+		//Ex. new Administrador, Gerente, Cliente
+		Autenticavel g2 = new Gerente();
+		
 		Gerente g1 = new Gerente();
 		g1.setNome("Éric André Mangolim");
 		g1.setCpf("917.333.401-49");

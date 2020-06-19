@@ -1,6 +1,7 @@
 //Não permite instanciar/criar objetos desta classe, pois ela é 'Abstrata'
-//Permite utilizar herança ~dos demais métodos. Ex.: getBonificacao, etc
+//Permite utilizar herança dos demais métodos. Ex.: getBonificacao, etc
 public abstract class Funcionario {
+	
 	private String nome;
 	private String cpf;
 	//protected double salario;

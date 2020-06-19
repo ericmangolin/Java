@@ -1,19 +1,7 @@
-public class Gerente extends Funcionario {
-	
+//Classe Gerente é um funcionario e assina o contrato Autenticavel
+public class Gerente extends Funcionario implements Autenticavel {
+		
 	private int senha;
-	
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-	
-	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		}else {
-			return false;
-		}
-	}
-	
 	//Funciona somente com a declaração protected
 	//public double getBonificacao() {
 		//return super.getBonificacao() + super.salario;
@@ -23,6 +11,21 @@ public class Gerente extends Funcionario {
 	public double getBonificacao() {
 		System.out.println("Método Bonificação Gerente");
 		return super.getSalario();
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+		
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		}else {
+		return false;
+		}
 	}
 	
 }
